@@ -1417,7 +1417,7 @@ coverage_block <- paste0(
 
       <geographicCoverage>
         <geographicDescription>
-          Data are collected at 47 terrestrial NEON sites across the United States including Alaska, Hawaii and Puerto Ricoi.
+          Data are collected at 47 terrestrial NEON sites across the United States including Alaska, Hawaii and Puerto Rico.
         </geographicDescription>
         <boundingCoordinates>
           <westBoundingCoordinate>-168.75</westBoundingCoordinate>
