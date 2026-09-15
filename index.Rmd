@@ -1153,7 +1153,7 @@ rownames(emof_data) <- NULL
 
 ## Full Dataset
 
-The full processed event and occurrence tables generated through this workflow are available in the project repository. [NEONBirdstoHumboldt/outputs/full](https://github.com/sunray1/NEONBirdstoHumboldt/tree/master/outputs/full).
+The full processed event and occurrence tables generated through this workflow are available in the project repository. [NEONBirdstoHumboldt/outputs/full](https://github.com/BioKIC/NEONBirdstoHumboldt/tree/master/outputs/full).
 
 ```{r}
 write.csv(event_data_core, "outputs/full/event.csv", row.names = FALSE, na = "")
@@ -1491,7 +1491,7 @@ additional_description_block <- paste0(
 '    <purpose>
       <para>
         The purpose of this dataset is to make breeding landbird monitoring data from the National Ecological Observatory Network (NEON) available through GBIF. The data have been structured using the Darwin Core standard and the Humboldt Extension for Ecological Inventories to support discovery, reuse, integration, and ecological analysis. Code used to transform the original NEON data into this Darwin Core Archive, including all data processing and mapping steps, is available at 
-        <ulink url="https://sunray1.github.io/NEONBirdstoHumboldt/"><citetitle>NEON Birds to Humboldt workflow</citetitle></ulink>.
+        <ulink url="https://BioKIC.github.io/NEONBirdstoHumboldt/"><citetitle>NEON Birds to Humboldt workflow</citetitle></ulink>.
       </para>
     </purpose>
 
