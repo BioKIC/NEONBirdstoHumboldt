@@ -1,18 +1,18 @@
 # Mapping NEON Survey Monitoring Data to the Humboldt Extension for Ecological Inventories
 
-This repository provides a worked example of mapping **NEON tick and tick pathogen monitoring data** to **Darwin Core** and the [Humboldt Extension for Ecological Inventories](https://eco.tdwg.org/).  
+This repository provides a worked example of mapping **NEON Breeding landbird point counts** to **Darwin Core** and the [Humboldt Extension for Ecological Inventories](https://eco.tdwg.org/).  
 
-The workflow was developed for the [GBIF Guide for publishing biological survey and monitoring data](https://docs.gbif.org/guide-publishing-survey-data/en/), using the **RELEASE-2026** NEON data products.
+The workflow was developed using the **RELEASE-2026** NEON data products.
 
 ---
 
 ## Contents
 
-- `NEONTickstoHumboldt.Rmd` – main workflow document (R Markdown)
+- `NEONBirdstoHumboldt.Rmd` – main workflow document (R Markdown)
 - `outputs/` – generated Darwin Core–formatted tables:
   - `event.csv`
+  - `humboldtecologicalinventory.csv`
   - `occurrence.csv`
-  - `resourceRelationship.csv`
   - `extendedMeasurementOrFact.csv`
 - `data/` – local cache of downloaded NEON datasets
 
@@ -20,12 +20,11 @@ The workflow was developed for the [GBIF Guide for publishing biological survey 
 
 ## Data Sources
 
-The workflow draws on two NEON data products:  
+The workflow draws on the following NEON data product:  
 
-- **Tick pathogen status** ([DP1.10092.001](https://doi.org/10.48443/n2yp-5a62))  
-- **Ticks sampled using drag cloths** ([DP1.10093.001](https://doi.org/10.48443/5e20-3763))  
+- **Breeding landbird point counts** ([DP1.10003.001](https://doi.org/10.48443/v6hs-mx57))  
 
-See the [NEON tick monitoring program](https://www.neonscience.org/data-collection/ticks) for details.
+See the [NEON bird data resource](https://www.neonscience.org/data-collection/birds) for details.
 
 ---
 
@@ -33,25 +32,25 @@ See the [NEON tick monitoring program](https://www.neonscience.org/data-collecti
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/sunray1/NEONTickstoHumboldt.git
-   cd NEONTickstoHumboldt
+   git clone https://github.com/sunray1/NEONBirdstoHumboldt.git
+   cd NEONBirdstoHumboldt
    ```
-2. Open NEONTickstoHumboldt.Rmd in RStudio.
+2. Open NEONBirdstoHumboldt.Rmd in RStudio.
 3. Install required R packages if not already present:
     ```r
     install.packages(c("neonUtilities", "dplyr"))
     ```
 3. Knit the R Markdown document to reproduce the outputs.
 
-> **Note:** Note: You may optionally set a NEON API token (Sys.setenv(NEON_TOKEN="your_token")) to avoid rate limits.
+> **Note:** Note: You must set a NEON API token (Sys.setenv(NEON_TOKEN="your_token")) to download data.
 
 ---
 
 ## Outputs
 
-The workflow generates Darwin Core–formatted tables, saved in the [`outputs/`](https://github.com/sunray1/NEONTickstoHumboldt/tree/master/outputs) folder:
+The workflow generates Darwin Core–formatted tables, saved in the [`outputs/`](https://github.com/BioKIC/NEONBirdstoHumboldt/tree/master/outputs) folder:
 
-- **`event.csv`** – hierarchical survey event structure (project, domain, site, plot, and visit levels)  
+- **`event.csv`** – hierarchical survey event structure (project, domain, site, plot, and visit levels)
+- **`humboldtecologicalinventory.csv`** – hierarchical survey event structure  
 - **`occurrence.csv`** – tick specimen records and pathogen testing results  
-- **`resourceRelationship.csv`** – links between tick specimens and pathogen detections  
 - **`extendedMeasurementOrFact.csv`** – additional measurements and metadata (e.g., counts, sample codes, conditions)
